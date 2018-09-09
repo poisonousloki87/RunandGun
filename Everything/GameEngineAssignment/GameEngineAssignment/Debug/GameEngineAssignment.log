@@ -1,3 +1,0 @@
-﻿  main.cpp
-c:\users\blada\desktop\gameegineass1\runandgun\everything\gameengineassignment\gameengineassignment\main.cpp(23): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  GameEngineAssignment.vcxproj -> C:\Users\blada\Desktop\GameEgineAss1\RunandGun\Everything\GameEngineAssignment\Debug\GameEngineAssignment.exe
