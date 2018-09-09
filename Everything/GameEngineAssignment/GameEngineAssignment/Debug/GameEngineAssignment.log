@@ -1,14 +1,3 @@
 ﻿  main.cpp
-c:\users\poisonousloki\documents\visual studio 2017\project\gameengineassignment\gameengineassignment\main.cpp(27): warning C4326: return type of 'main' should be 'int' instead of 'void'
-main.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function _main
-main.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function _main
-main.obj : error LNK2019: unresolved external symbol _glfwWindowHint referenced in function _main
-main.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function _main
-main.obj : error LNK2019: unresolved external symbol _glfwSetWindowShouldClose referenced in function "void __cdecl processInputs(struct GLFWwindow *)" (?processInputs@@YAXPAUGLFWwindow@@@Z)
-main.obj : error LNK2019: unresolved external symbol _glfwSetWindowTitle referenced in function "void __cdecl showFPS(struct GLFWwindow *)" (?showFPS@@YAXPAUGLFWwindow@@@Z)
-main.obj : error LNK2019: unresolved external symbol _glfwSetFramebufferSizeCallback referenced in function _main
-main.obj : error LNK2019: unresolved external symbol _glfwGetKey referenced in function "void __cdecl processInputs(struct GLFWwindow *)" (?processInputs@@YAXPAUGLFWwindow@@@Z)
-main.obj : error LNK2019: unresolved external symbol _glfwGetTime referenced in function "void __cdecl showFPS(struct GLFWwindow *)" (?showFPS@@YAXPAUGLFWwindow@@@Z)
-main.obj : error LNK2019: unresolved external symbol _glfwMakeContextCurrent referenced in function _main
-main.obj : error LNK2019: unresolved external symbol _glfwGetProcAddress referenced in function _main
-C:\Users\Poisonousloki\Documents\Visual Studio 2017\Project\GameEngineAssignment\Debug\GameEngineAssignment.exe : fatal error LNK1120: 11 unresolved externals
+c:\users\blada\desktop\gameegineass1\runandgun\everything\gameengineassignment\gameengineassignment\main.cpp(23): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  GameEngineAssignment.vcxproj -> C:\Users\blada\Desktop\GameEgineAss1\RunandGun\Everything\GameEngineAssignment\Debug\GameEngineAssignment.exe
