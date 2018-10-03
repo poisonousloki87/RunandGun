@@ -3,19 +3,24 @@
 #include <iostream>
 #include <string>
 #include <sstream>//string stream
-#include "Shader.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#define STB_IMAGE_IMPLEMENTATION //so it wont go looking for the c or cpp file
-#include "stb_image.h"
+#include "Camera.h"
+#include "Shader.h"
+#include "GameLoop.h"
 
 using namespace std;
 
 bool wireFrame = false;
 int selectedColour = 1;
+GameLoop gameLoop;
+
+Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f));
+float lastX = 400, lastY = 300;
+bool firstMouse = true;
 
 //window resize call back function prototype
 void windowResizeCallBack(GLFWwindow* window, int width, int height);
@@ -25,6 +30,12 @@ void processInputs(GLFWwindow* window);
 
 //Frames Per Second prototype
 void showFPS(GLFWwindow* window); 
+
+//mouse callback
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+
+//scroll wheel callback
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
 
 void main()
 {
@@ -44,6 +55,7 @@ void main()
 		system("pause");
 		return;
 	}
+
 	//make this window the current one
 	glfwMakeContextCurrent(window);
 
@@ -65,6 +77,12 @@ void main()
 	//add window resize callback, params: window to check events on, function to call
 		//when it resizes
 	glfwSetFramebufferSizeCallback(window, windowResizeCallBack);
+
+	//glfwSetCursorPosCallback(window, mouse_callback);
+	//glfwSetScrollCallback(window, scroll_callback);
+
+	//hide cursor and lock mouse within window area
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	Shader shaderProgram3("vertexShader4.txt", "fragmentShader4.txt");
 	Shader shaderProgram4("vertexShader5.txt", "fragmentShader4.txt");
@@ -394,6 +412,10 @@ void main()
 		//--------------------------------------------------
 
 
+		//IF BUTTON CLICKED THEN RUN THE GAME WORLD
+		// 
+		//
+
 		//Input for window
 		glfwPollEvents();
 
@@ -417,23 +439,12 @@ void windowResizeCallBack(GLFWwindow* window, int width, int height){
 
 //user inputs
 void processInputs(GLFWwindow* window){
-	//if esc pressed, set window to 'should close'
-	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		glfwSetWindowShouldClose(window, true);
-	if (glfwGetKey(window, GLFW_KEY_W) ==GLFW_PRESS ){
-		//flip wiremode value
-		wireFrame = !wireFrame;
-		if (wireFrame) //if(wireframe == true)
-			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-		else
-			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+	{
+		gameLoop.RunGameLoop(window, camera);
 	}
-	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
-		selectedColour = 1;
-	if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
-		selectedColour = 2;
-	if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS)
-		selectedColour = 3;
 }
 
 void showFPS(GLFWwindow* window){
@@ -455,10 +466,33 @@ void showFPS(GLFWwindow* window){
 
 		stringstream ss;
 		ss.precision(3);//3 decimal places
-		ss << fixed << "Game1 FPS: " << fps << " Frame Time: " << msPerFrame << "(ms)";
+		ss << fixed << "RunAndGun FPS: " << fps << " Frame Time: " << msPerFrame << "(ms)";
 
 		glfwSetWindowTitle(window, ss.str().c_str());
 		frameCount = 0;
 	}
 	frameCount++;
 }
+
+//mouse callback
+void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+	if (firstMouse) {
+		//helps not make a massive camera rotation jump when mouse first touches the screen
+		lastX = xpos;
+		lastY = ypos;
+		firstMouse = false;
+	}
+
+	float xoffset = xpos - lastX;
+	float yoffset = lastY - ypos;
+	lastX = xpos;
+	lastY = ypos;
+
+	camera->ProcessMouseMovement(xoffset, yoffset);
+}
+
+//scroll wheel callback
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset) {
+	camera->ProcessMouseScroll(yoffset);
+}
+
