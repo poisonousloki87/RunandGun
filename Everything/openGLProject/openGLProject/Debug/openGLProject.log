@@ -1,2 +1,7 @@
-﻿  main.cpp
-  openGLProject.vcxproj -> C:\Users\blada\Desktop\openGLProject\Debug\openGLProject.exe
+﻿  glad.c
+  main.cpp
+  Shader.cpp
+c:\users\blada\desktop\gameegineass1\runandgun\everything\openglproject\openglproject\shader.cpp(37): warning C4101: 'success': unreferenced local variable
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  openGLProject.vcxproj -> C:\Users\blada\Desktop\GameEgineAss1\RunandGun\Everything\openGLProject\Debug\openGLProject.exe
