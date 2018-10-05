@@ -124,6 +124,7 @@ private:
 			vector.y = mesh->mTangents[i].y;
 			vector.z = mesh->mTangents[i].z;
 			vertex.Tangent = vector;
+			
 			// bitangent
 			vector.x = mesh->mBitangents[i].x;
 			vector.y = mesh->mBitangents[i].y;

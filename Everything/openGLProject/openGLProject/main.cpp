@@ -78,8 +78,8 @@ void main()
 		//when it resizes
 	glfwSetFramebufferSizeCallback(window, windowResizeCallBack);
 
-	//glfwSetCursorPosCallback(window, mouse_callback);
-	//glfwSetScrollCallback(window, scroll_callback);
+	glfwSetCursorPosCallback(window, mouse_callback);
+	glfwSetScrollCallback(window, scroll_callback);
 
 	//hide cursor and lock mouse within window area
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
