@@ -1,15 +1,9 @@
 ﻿  GameLoop.cpp
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\shader.h(55): warning C4101: 'infoLog': unreferenced local variable
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\shader.h(54): warning C4101: 'success': unreferenced local variable
+d:\adv\runandgun\everything\openglproject\openglproject\model.h(8): fatal error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
   main.cpp
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\shader.h(55): warning C4101: 'infoLog': unreferenced local variable
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\shader.h(54): warning C4101: 'success': unreferenced local variable
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\main.cpp(481): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\main.cpp(482): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\main.cpp(486): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\main.cpp(487): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\main.cpp(488): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\main.cpp(489): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\blada\desktop\runandgun\runandgun\everything\openglproject\openglproject\main.cpp(496): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\adv\runandgun\everything\openglproject\openglproject\shader.h(55): warning C4101: 'infoLog': unreferenced local variable
+d:\adv\runandgun\everything\openglproject\openglproject\shader.h(54): warning C4101: 'success': unreferenced local variable
+d:\adv\runandgun\everything\openglproject\openglproject\model.h(8): fatal error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
+  Model.cpp
+d:\adv\runandgun\everything\openglproject\openglproject\model.h(8): fatal error C1083: Cannot open include file: 'assimp/Importer.hpp': No such file or directory
   Generating Code...
-  openGLProject.vcxproj -> C:\Users\blada\Desktop\RunandGun\RunandGun\Everything\openGLProject\Debug\openGLProject.exe
