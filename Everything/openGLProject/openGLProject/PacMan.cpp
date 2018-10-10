@@ -37,8 +37,8 @@ int map[21][21] = {
 void GhostAI1(int playerR, int playerC)
 {
 	//location of ghost
-	int G1R;
-	int G1C;
+	int G1R = 0;
+	int G1C = 0;
 
 	//location of player
 	int playerLocationR = playerR;
