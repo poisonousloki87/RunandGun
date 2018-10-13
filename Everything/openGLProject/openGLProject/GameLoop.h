@@ -30,5 +30,8 @@ public:
 
 	void RunGameLoop(GLFWwindow* window, Camera* camera);
 	void ProcessGameInputs(GLFWwindow* window, Camera* camera);
+	void DrawMap(Shader lightShader, Model model);
+	void DrawPacMan(Shader lightShader, Model myModel);
+	void DrawGhost(Shader lightShader, Model myModel);
 };
 
